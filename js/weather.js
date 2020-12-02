@@ -56,7 +56,8 @@ function gettingJSON(){
         loc = json["name"];
         temp = json["main"]["temp"];
         tempImg = json["weather"][0]["icon"];
-        conditions = json["weather"][0]["description"]
+        altText = json["weather"][0]["description"];
+        conditions = json["weather"][0]["description"];
         console.log("location: " + loc);
         console.log("temp: " + temp);
         console.log("Image: " + tempImg);
@@ -65,6 +66,7 @@ function gettingJSON(){
         document.querySelector("#loc").innerHTML = loc;
         document.querySelector("#temp").innerHTML = temp + " with " + conditions;
         document.querySelector("#tempImg").src = 'http://openweathermap.org/img/wn/' + tempImg + '.png';
+        document.querySelector("#tempImg").alt = altText
 
     });
 }
